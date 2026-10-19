@@ -58,14 +58,10 @@ Proje içi `.venv` (Python 3.12.10):
 
 GPU, PyTorch veya ücretli hizmet kullanılmadı.
 
-## 5. Teslim paketi
-
-`D:\Project\PredictiveMaint-AI\dist\PredictiveMaint_AI_Teslim.zip`
-
-## 6. Kullanıcı aksiyonları
+## 5. Kullanıcı aksiyonları
 
 1. Notebook'u Colab'da bir kez çalıştır (README'deki "Colab'da aç" bağlantısı).
 
-## 7. Araçlar
+## 6. Araçlar
 
 Kod ve belgeler Claude Code (Anthropic) yardımıyla geliştirildi ve test edildi. Proje sahibi ve sorumlusu Tugay Sinan Ergün'dür.
