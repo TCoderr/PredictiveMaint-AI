@@ -69,8 +69,9 @@ def fig(name, width, caption):
 # 1 title
 t = doc.add_paragraph(); r = t.add_run('PredictiveMaint AI — Endüstriyel Ekipman Arızası Tahmini'); r.bold = True; r.font.size = Pt(17)
 para(f'Makine ve Derin Öğrenme Uygulamaları · Proje raporu · {AUTHOR} (GitHub: TCoderr) · 19 Ekim 2026')
-para('**Kod ve Notebook:** Teslim paketindeki `notebooks/PredictiveMaint_AI.ipynb` (çalıştırılmış çıktılarıyla). '
-     '**GitHub/Colab bağlantısı henüz yayımlanmadı**; yazar yükledikten sonra buraya eklenecektir.')
+para('**Kod ve Notebook (GitHub):** https://github.com/TCoderr/PredictiveMaint-AI · '
+     "**Colab'da aç:** https://colab.research.google.com/github/TCoderr/PredictiveMaint-AI/blob/main/notebooks/PredictiveMaint_AI.ipynb "
+     "(notebook yerelde çalıştırıldı ve tekrarlanabilirliği doğrulandı; Colab'da çalıştırılması bu çalışmada doğrulanmadı).")
 
 h('1. Problem tanımı')
 para('Girdi olarak bir üretim sürecinin ürün tipi (L/M/H), hava ve süreç sıcaklığı, devir, tork ve takım aşınması kullanılır. '

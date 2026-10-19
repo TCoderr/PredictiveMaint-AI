@@ -20,7 +20,7 @@ Durum: ✅ tamamlandı ve doğrulandı · ⚠️ tamamlandı, açık not var · 
 | 3.8 | Güçlü/zayıf yönler, hatalar, öneriler | Rapor §6–9 | FN bölümü, hata analizi, sınırlar | ✅ |
 | 5 | Rapor 3–5 sayfa | `reports/PredictiveMaint_AI_Rapor.pdf` | Word'de 4 sayfa | ✅ |
 | 5 | Veri kaynağı bağlantısı | Rapor §2 | UCI DOI | ✅ |
-| 5 | Kodun GitHub/Colab bağlantısıyla verilmesi | Rapor başlığı | **Bağlantı henüz yok**; uydurulmadı | 👤 |
+| 5 | Kodun GitHub/Colab bağlantısıyla verilmesi | Rapor başlığı | https://github.com/TCoderr/PredictiveMaint-AI (public, HTTP 200 doğrulandı) + Colab açma bağlantısı | ✅ |
 
 ## Görev kapsamındaki ek gereksinimler
 
@@ -46,5 +46,4 @@ Durum: ✅ tamamlandı ve doğrulandı · ⚠️ tamamlandı, açık not var · 
 
 ## Kullanıcı aksiyonları
 
-1. 👤 Onay verirsen projeyi GitHub'a (TCoderr) yükle ve bağlantıyı rapora ve README'ye ekle. Rapor `scripts/build_report.py` ile yeniden üretilir.
-2. 👤 Notebook'u Google Colab'da bir kez "Tümünü çalıştır" ile doğrula.
+1. 👤 Notebook'u Colab'da aç (README'deki bağlantı) ve bir kez "Tümünü çalıştır" ile doğrula.

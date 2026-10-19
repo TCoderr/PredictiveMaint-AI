@@ -10,9 +10,9 @@
 - **Testler:** 11 testin tamamı geçti. Testler en önemli sonuçları notebook'tan bağımsız olarak yeniden hesaplıyor.
 - **Rapor:** 4 sayfalık rapor `metrics.json`'dan üretildi; içindeki 20 sayı otomatik karşılaştırmayla doğrulandı.
 
-**Açık konular:**
-- Raporun istediği GitHub/Colab bağlantısı yok; dış hesap işlemi için onay gerekiyor.
-- Notebook Colab'da çalıştırılmadı.
+**Kod bağlantısı:** https://github.com/TCoderr/PredictiveMaint-AI (public). Proje sahibinin onayıyla oluşturuldu ve doğrulandı. Rapora GitHub ve Colab açma bağlantısı eklendi.
+
+**Açık konu:** Notebook Colab'da çalıştırılmadı.
 
 ## 2. Temel bulgular
 
@@ -64,8 +64,7 @@ GPU, PyTorch veya ücretli hizmet kullanılmadı.
 
 ## 6. Kullanıcı aksiyonları
 
-1. GitHub'a yükleme onayı ver veya kendin yükle. Bağlantıyı rapora ekle ve raporu yeniden üret.
-2. Notebook'u Colab'da bir kez çalıştır.
+1. Notebook'u Colab'da bir kez çalıştır (README'deki "Colab'da aç" bağlantısı).
 
 ## 7. Araçlar
 

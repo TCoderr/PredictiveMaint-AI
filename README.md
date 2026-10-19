@@ -73,7 +73,10 @@ powershell -ExecutionPolicy Bypass -File scripts\export_office.ps1
 
 ## Kod bağlantısı
 
-Yönerge, kodun raporda GitHub veya Colab bağlantısıyla verilmesini istiyor. **Bağlantı henüz yayımlanmadı.** Proje sahibinin onayıyla GitHub'a (TCoderr) yüklendikten sonra rapordaki ve bu README'deki yer güncellenmelidir.
+- **GitHub (public):** https://github.com/TCoderr/PredictiveMaint-AI
+- **Colab'da aç:** [TCoderr/PredictiveMaint-AI/blob/main/notebooks/PredictiveMaint_AI.ipynb](https://colab.research.google.com/github/TCoderr/PredictiveMaint-AI/blob/main/notebooks/PredictiveMaint_AI.ipynb)
+
+Colab bağlantısı, Colab'ın public GitHub notebook'larını açan resmî adres biçimidir. Notebook Colab'da çalıştırılmadı (bkz. yukarıdaki not). Bağlantı rapora da eklendi.
 
 ## Kaynaklar ve lisans
 

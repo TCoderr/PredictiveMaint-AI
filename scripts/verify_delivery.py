@@ -64,8 +64,17 @@ for name, t in R['tuning'].items():
 miss_pdf = {k: v for k, v in expect.items() if v not in text}
 check('Report numbers == notebook metrics.json', not miss_pdf, f'{len(expect) - len(miss_pdf)}/{len(expect)} values found in PDF text' + (f'; MISSING {miss_pdf}' if miss_pdf else ''))
 check('Report length 3-5 pages', 3 <= len(pdf.pages) <= 5, f'{len(pdf.pages)} pages')
-kws = [k for k in ('sentetik', 'sızıntı', 'Yanlış negatif', 'nedensellik', 'akademik bir prototip', 'bağlantısı henüz yayımlanmadı') if k not in text]
-check('Report states synthetic data, leakage, FN, non-causality, prototype, no fake link', not kws, 'all statements present' if not kws else f'MISSING {kws}')
+kws = [k for k in ('sentetik', 'sızıntı', 'Yanlış negatif', 'nedensellik', 'akademik bir prototip', 'github.com/TCoderr/PredictiveMaint-AI') if k not in text]
+check('Report states synthetic data, leakage, FN, non-causality, prototype, code link', not kws, 'all statements present' if not kws else f'MISSING {kws}')
+import urllib.request
+def http(u):
+    try:
+        return urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'verify'}), timeout=20).status
+    except Exception as e:  # noqa: BLE001
+        return getattr(e, 'code', str(e)[:40])
+links = sorted(set(re.findall(r'https://github\.com/TCoderr/[A-Za-z0-9_./-]+', text + (ROOT / 'README.md').read_text(encoding='utf-8'))))
+codes = {u.rstrip('.'): http(u.rstrip('.')) for u in links}
+check('GitHub links in report/README are live (HTTP 200)', codes and all(c == 200 for c in codes.values()), ', '.join(f'{u} -> {c}' for u, c in codes.items()))
 readme = (ROOT / 'README.md').read_text(encoding='utf-8')
 b5, s5 = R['test_default']['LogReg (temel)'], R['test_default'][sel]
 rows_expected = [f"| {n(b5['precision'])} | {n(b5['recall'])} | {n(b5['f1'])} | {n(b5['pr_auc'])} | {int(b5['fn'])} |",
