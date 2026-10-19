@@ -57,7 +57,6 @@ py -3.12 -m venv .venv
 .venv\Scripts\python -m pytest -v                        # 11 test
 ```
 
-Rapor üretimi için şu komutlar kullanılır (PDF için Microsoft Office gerekir):
 
 ```powershell
 .venv\Scripts\python scripts\build_report.py
