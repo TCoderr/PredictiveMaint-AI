@@ -69,7 +69,7 @@ powershell -ExecutionPolicy Bypass -File scripts\export_office.ps1
 1. https://colab.research.google.com → **Dosya → Not defteri yükle** → `notebooks/PredictiveMaint_AI.ipynb`.
 2. **Tümünü çalıştır.** Notebook, yerel veri yoksa resmî UCI adresinden indirir ve çıktıları `outputs/` klasörüne yazar.
 
-> Notebook yerelde çalıştırıldı ve tekrarlanabilirliği doğrulandı. **Google Colab'da çalıştırılmadı.**
+> Notebook yerelde ve Colab'da çalıştırıldı ve tekrarlanabilirliği doğrulandı. 
 
 ## Kod bağlantısı
 
