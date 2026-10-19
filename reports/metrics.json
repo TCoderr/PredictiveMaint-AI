@@ -1,0 +1,333 @@
+{
+  "data": {
+    "rows": 10000,
+    "cols": 14,
+    "missing": 0,
+    "duplicates": 0,
+    "failures": 339,
+    "non_failures": 9661,
+    "failure_rate": 0.0339,
+    "mode_counts": {
+      "TWF": 46,
+      "HDF": 115,
+      "PWF": 95,
+      "OSF": 98,
+      "RNF": 19
+    },
+    "failure_without_mode": 9,
+    "mode_without_failure": 18,
+    "mode_without_failure_by_mode": {
+      "TWF": 0,
+      "HDF": 0,
+      "PWF": 0,
+      "OSF": 0,
+      "RNF": 18
+    },
+    "type_counts": {
+      "L": 6000,
+      "M": 2997,
+      "H": 1003
+    },
+    "product_id_letter_equals_type": true,
+    "failure_rate_by_type": {
+      "L": 3.916666666666667,
+      "M": 2.7694361027694363,
+      "H": 2.0937188434695915
+    }
+  },
+  "outliers_iqr": {
+    "Air temperature [K]": 0,
+    "Process temperature [K]": 0,
+    "Rotational speed [rpm]": 418,
+    "Torque [Nm]": 69,
+    "Tool wear [min]": 0
+  },
+  "split": {
+    "train": {
+      "rows": 6000,
+      "failures": 203,
+      "failure_rate": 0.03383333333333333
+    },
+    "val": {
+      "rows": 2000,
+      "failures": 68,
+      "failure_rate": 0.034
+    },
+    "test": {
+      "rows": 2000,
+      "failures": 68,
+      "failure_rate": 0.034
+    }
+  },
+  "tuning": {
+    "LogReg (temel)": {
+      "features": [
+        "Air temperature [K]",
+        "Process temperature [K]",
+        "Rotational speed [rpm]",
+        "Torque [Nm]",
+        "Tool wear [min]",
+        "Type"
+      ],
+      "grid_size": 8,
+      "best_params": {
+        "C": "1.0",
+        "class_weight": "None"
+      },
+      "val_pr_auc": 0.40541445279762933
+    },
+    "LogReg (+türetilmiş)": {
+      "features": [
+        "Air temperature [K]",
+        "Process temperature [K]",
+        "Rotational speed [rpm]",
+        "Torque [Nm]",
+        "Tool wear [min]",
+        "temp_diff",
+        "power_w",
+        "strain",
+        "Type"
+      ],
+      "grid_size": 8,
+      "best_params": {
+        "C": "1.0",
+        "class_weight": "None"
+      },
+      "val_pr_auc": 0.4725249190752034
+    },
+    "Random Forest": {
+      "features": [
+        "Air temperature [K]",
+        "Process temperature [K]",
+        "Rotational speed [rpm]",
+        "Torque [Nm]",
+        "Tool wear [min]",
+        "temp_diff",
+        "power_w",
+        "strain",
+        "Type"
+      ],
+      "grid_size": 8,
+      "best_params": {
+        "max_depth": "12",
+        "min_samples_leaf": "1",
+        "class_weight": "None"
+      },
+      "val_pr_auc": 0.866799528054069
+    },
+    "MLP": {
+      "features": [
+        "Air temperature [K]",
+        "Process temperature [K]",
+        "Rotational speed [rpm]",
+        "Torque [Nm]",
+        "Tool wear [min]",
+        "temp_diff",
+        "power_w",
+        "strain",
+        "Type"
+      ],
+      "grid_size": 4,
+      "best_params": {
+        "hidden_layer_sizes": "(64, 32)",
+        "alpha": "0.001"
+      },
+      "val_pr_auc": 0.7230650560737434
+    }
+  },
+  "training_seconds": 7.6,
+  "test_default": {
+    "LogReg (temel)": {
+      "accuracy": 0.9685,
+      "precision": 0.6923076923076923,
+      "recall": 0.1323529411764706,
+      "f1": 0.2222222222222222,
+      "f2": 0.15789473684210525,
+      "roc_auc": 0.9003014249177932,
+      "pr_auc": 0.41638644097437316,
+      "tn": 1928.0,
+      "fp": 4.0,
+      "fn": 59.0,
+      "tp": 9.0,
+      "fnr": 0.8676470588235294,
+      "threshold": 0.5
+    },
+    "LogReg (+türetilmiş)": {
+      "accuracy": 0.9675,
+      "precision": 0.5714285714285714,
+      "recall": 0.17647058823529413,
+      "f1": 0.2696629213483146,
+      "f2": 0.20477815699658702,
+      "roc_auc": 0.9197494215077336,
+      "pr_auc": 0.4642515389075449,
+      "tn": 1923.0,
+      "fp": 9.0,
+      "fn": 56.0,
+      "tp": 12.0,
+      "fnr": 0.8235294117647058,
+      "threshold": 0.5
+    },
+    "Random Forest": {
+      "accuracy": 0.992,
+      "precision": 0.9814814814814815,
+      "recall": 0.7794117647058824,
+      "f1": 0.8688524590163934,
+      "f2": 0.8128834355828221,
+      "roc_auc": 0.9791438314456218,
+      "pr_auc": 0.8910322434279009,
+      "tn": 1931.0,
+      "fp": 1.0,
+      "fn": 15.0,
+      "tp": 53.0,
+      "fnr": 0.22058823529411764,
+      "threshold": 0.5
+    },
+    "MLP": {
+      "accuracy": 0.979,
+      "precision": 0.7096774193548387,
+      "recall": 0.6470588235294118,
+      "f1": 0.676923076923077,
+      "f2": 0.6586826347305389,
+      "roc_auc": 0.9728717573986116,
+      "pr_auc": 0.7408027602334545,
+      "tn": 1914.0,
+      "fp": 18.0,
+      "fn": 24.0,
+      "tp": 44.0,
+      "fnr": 0.35294117647058826,
+      "threshold": 0.5
+    }
+  },
+  "naive_all_zero": {
+    "accuracy": 0.966,
+    "recall": 0.0,
+    "fn": 68
+  },
+  "selected_model": "Random Forest",
+  "threshold": {
+    "criterion": "max F2 on validation",
+    "value": 0.23,
+    "val_at_threshold": {
+      "accuracy": 0.989,
+      "precision": 0.8709677419354839,
+      "recall": 0.7941176470588235,
+      "f1": 0.8307692307692308,
+      "f2": 0.8083832335329342,
+      "roc_auc": 0.9776214833759591,
+      "pr_auc": 0.866799528054069,
+      "tn": 1924.0,
+      "fp": 8.0,
+      "fn": 14.0,
+      "tp": 54.0,
+      "fnr": 0.20588235294117646,
+      "threshold": 0.23
+    },
+    "val_at_0_5": {
+      "accuracy": 0.991,
+      "precision": 1.0,
+      "recall": 0.7352941176470589,
+      "f1": 0.847457627118644,
+      "f2": 0.7763975155279503,
+      "roc_auc": 0.9776214833759591,
+      "pr_auc": 0.866799528054069,
+      "tn": 1932.0,
+      "fp": 0.0,
+      "fn": 18.0,
+      "tp": 50.0,
+      "fnr": 0.2647058823529412,
+      "threshold": 0.5
+    }
+  },
+  "test_final": {
+    "accuracy": 0.991,
+    "precision": 0.8787878787878788,
+    "recall": 0.8529411764705882,
+    "f1": 0.8656716417910447,
+    "f2": 0.8579881656804734,
+    "roc_auc": 0.9791438314456218,
+    "pr_auc": 0.8910322434279009,
+    "tn": 1924.0,
+    "fp": 8.0,
+    "fn": 10.0,
+    "tp": 58.0,
+    "fnr": 0.14705882352941177,
+    "threshold": 0.23
+  },
+  "explain": {
+    "logreg_eng_coef": {
+      "power_w": -2.075162574797077,
+      "temp_diff": -0.6844214615832682,
+      "Type_H": -0.20028909486201396,
+      "Type_M": -0.07343867249201164,
+      "Process temperature [K]": -0.06582467353085444,
+      "Type_L": 0.16365554783617764,
+      "strain": 0.2779849616372812,
+      "Air temperature [K]": 0.2945476027257847,
+      "Tool wear [min]": 0.4481554920213013,
+      "Rotational speed [rpm]": 2.101342507138141,
+      "Torque [Nm]": 4.789518492005617
+    },
+    "rf_permutation_pr_auc_drop": {
+      "Process temperature [K]": 0.01277828498835698,
+      "Air temperature [K]": 0.020157472369230312,
+      "Torque [Nm]": 0.023771801247835244,
+      "Type": 0.044129415535897686,
+      "Tool wear [min]": 0.055510910486888845,
+      "temp_diff": 0.1372992464192549,
+      "strain": 0.1674421324771926,
+      "power_w": 0.1801215548782494,
+      "Rotational speed [rpm]": 0.18287790981196106
+    }
+  },
+  "error_analysis": {
+    "fn_by_mode": {
+      "HDF": 0,
+      "HDF+PWF": 0,
+      "OSF": 0,
+      "PWF": 0,
+      "TWF": 8,
+      "TWF+OSF": 0,
+      "tür yok": 2
+    },
+    "failures_by_mode": {
+      "HDF": 28,
+      "HDF+PWF": 1,
+      "OSF": 15,
+      "PWF": 12,
+      "TWF": 9,
+      "TWF+OSF": 1,
+      "tür yok": 2
+    },
+    "fp_count": 8,
+    "fp_with_failure_mode_flag": 0,
+    "fp_vs_tn_means": {
+      "FP ortalaması": {
+        "Air temperature [K]": 301.7,
+        "Process temperature [K]": 310.7,
+        "Rotational speed [rpm]": 1392.6,
+        "Torque [Nm]": 50.8,
+        "Tool wear [min]": 153.4
+      },
+      "TN ortalaması": {
+        "Air temperature [K]": 300.0,
+        "Process temperature [K]": 310.0,
+        "Rotational speed [rpm]": 1539.1,
+        "Torque [Nm]": 39.5,
+        "Tool wear [min]": 107.3
+      },
+      "TP ortalaması": {
+        "Air temperature [K]": 300.9,
+        "Process temperature [K]": 310.2,
+        "Rotational speed [rpm]": 1459.0,
+        "Torque [Nm]": 52.8,
+        "Tool wear [min]": 144.0
+      }
+    }
+  },
+  "versions": {
+    "python": "3.12.10",
+    "sklearn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4"
+  }
+}

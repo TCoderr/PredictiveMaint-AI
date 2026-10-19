@@ -1,0 +1,17 @@
+PredictiveMaint AI - Delivery Verification
+Generated: 2026-10-19 03:08:53
+
+[PASS] Required files: 25/25 present
+[PASS] Notebook executed, no errors: 19 code cells executed, errors=0
+[PASS] Notebook contains required methods and leakage guard: split/encoding/scaling/3 models/all metrics/permutation importance/validation set/leakage assert
+[PASS] No Windows-specific paths (Colab): none
+[PASS] Report numbers == notebook metrics.json: 20/20 values found in PDF text
+[PASS] Report length 3-5 pages: 4 pages
+[PASS] Report states synthetic data, leakage, FN, non-causality, prototype, no fake link: all statements present
+[PASS] README results table == metrics.json: baseline, selected@0.5 and selected@threshold rows match
+[PASS] Author metadata = Tugay Sinan Ergün only: {'Tugay Sinan Ergün'}
+[PASS] Selected by validation, threshold from validation: selected Random Forest (val PR-AUC 0.8668); threshold 0.23 (max F2 on validation)
+[PASS] Automated tests: 11 tests, 0 failures, 0 errors
+[PASS] ZIP integrity and contents: 36 files, 1.96 MB, CRC ok=True, leaked=none, missing=none
+
+OVERALL: PASS (12/12)

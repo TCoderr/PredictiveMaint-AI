@@ -1,0 +1,4 @@
+PredictiveMaint AI - reproducibility check
+Generated: 2026-10-19 02:53:12
+Notebook re-run exit code: 0 | executed 19 code cells in 23.3s, errors: 0
+metrics.json identical (excluding training_seconds 7.6 -> 7.6): True
